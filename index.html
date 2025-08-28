@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>D1 Media — Coming Soon</title>
+  <meta name="description" content="D1 Media temporary landing page. … more to come." />
+  <meta property="og:title" content="D1 Media — Coming Soon" />
+  <meta property="og:description" content="D1 Media temporary landing page. … more to come." />
+  <meta name="theme-color" content="#0e1019" />
+  <style>
+    :root{
+      --bg-1:#0e1019;     /* page background start */
+      --bg-2:#1a1f3b;     /* page background end */
+      --card:#0f1326cc;   /* translucent card */
+      --fg:#e8ecff;       /* main text */
+      --muted:#b7c0e3;    /* secondary text */
+      --accent:#8ef0ff;   /* accent color */
+      --accent-2:#8b5cf6; /* subtle gradient accent */
+      --radius:1.25rem;
+      --shadow:0 10px 25px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--fg);
+      background: radial-gradient(1200px 800px at 10% 10%, rgba(142,240,255,.18), transparent 60%),
+                  radial-gradient(800px 600px at 90% 20%, rgba(139,92,246,.12), transparent 55%),
+                  linear-gradient(160deg, var(--bg-1), var(--bg-2));
+      display:grid;
+      place-items:center;
+      padding: 32px;
+    }
+    main{
+      width:min(860px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)) , var(--card);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 6vw, 56px);
+    }
+    .wordmark{
+      font-size: clamp(40px, 8vw, 72px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      display: inline-flex;
+      align-items: baseline;
+      gap: .1em;
+    }
+    .wordmark .dot{ color: var(--accent); text-shadow: 0 0 24px rgba(142,240,255,.6); }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.4rem .7rem;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(142,240,255,.18), rgba(139,92,246,.18));
+      border: 1px solid rgba(255,255,255,.12);
+      font-size:.85rem;
+      color:var(--muted);
+    }
+    .lead{
+      margin-top: 18px;
+      font-size: clamp(18px, 2.5vw, 22px);
+      color: var(--fg);
+    }
+    .note{
+      margin-top: 10px;
+      font-size: 16px;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .cta-row{
+      margin-top: clamp(20px, 3.5vw, 32px);
+      display:flex; flex-wrap: wrap; gap:12px;
+    }
+    .btn{
+      --btn-bg: linear-gradient(90deg, var(--accent), #c8f3ff);
+      border: none;
+      background: var(--btn-bg);
+      color:#04141a;
+      padding: 12px 18px;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor:pointer;
+      box-shadow: 0 6px 16px rgba(0,0,0,.25);
+      text-decoration:none;
+      transition: transform .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn.secondary{
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: none;
+    }
+    footer{
+      margin-top: clamp(28px, 4vw, 40px);
+      border-top: 1px dashed rgba(255,255,255,.14);
+      padding-top: 16px;
+      display:flex; justify-content: space-between; align-items:center; gap:12px; flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .pill{ padding:.25rem .6rem; border:1px solid rgba(255,255,255,.12); border-radius:999px; }
+    @media (prefers-reduced-motion: reduce){
+      .btn{ transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <main role="main">
+
+    <h1 class="wordmark" aria-label="D1 Media">
+      <span class="text">d1</span><span class="dot">.media</span>
+    </h1>
+
+    <p class="lead">Always, a work in progress...</p>
+ 
+    <div class="cta-row">
+      <a class="btn" href="mailto:duane@d1.media" aria-label="Email D1 Media">Inquiries</a>
+    </div>
+
+    <footer>
+      <span>&copy; <span id="y"></span> D1 Media</span>
+      <span class="pill">d1.media</span>
+    </footer>
+  </main>
+  <script>
+    // Set current year in footer (keeps the markup clean)
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
